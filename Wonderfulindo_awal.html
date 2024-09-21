@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Wonderfulindo1.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <title>Tampilan awal</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+        }
+        body {
+            font-family: 'rubik', Helvetica, sans-serif;
+        }
+        .bg1 {
+            width: 100%;
+            height: 750px;
+            opacity: 90%;
+            background-image: url(./Aset-img/bg3.jpg);
+            background-size: cover;
+        }
+        .bg1 h2 {
+            font-family: "lora";
+            font-weight: 400;
+            font-style: italic;
+            font-size: 35px;
+        }
+        .ph-arrow-fat-lines-down {
+            font-size: 90px;
+            position: absolute;
+            animation-name: scrolling-icon;
+            animation-duration: 4.5s;
+            animation-iteration-count: infinite
+        }
+        @keyframes scrolling-icon {
+            0%   { bottom: 30%; right: 6%;}
+            25%  { bottom: 22.5%; right: 6%;}
+            50%  { bottom: 30%; right: 6%;}
+            75%  { bottom: 22.5%; right: 6%;}
+            100% { bottom: 30%; right: 6%;}
+        }
+        .icon-awal {
+            margin-top: 10%;
+            margin-left: 45px;
+            position: fixed;
+            z-index: 103;
+        }
+        .icon-awal i {
+            font-size: 26px;
+            display: grid;
+            top: 10px; 
+            margin-top: 30px;
+            left: 20px;
+            transition: transform 0.30s;
+        }
+        .icon-awal i:hover {
+            transform: scale(1.2);
+        }
+        .icon-awal h3 {
+            padding-top: 20px;
+        }
+        .first-container a {
+            position: absolute;
+            padding: 10px;
+            border-radius: 7px;
+            top: 41%;
+            left: 25%;
+            background-color: black;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .first-container h1 {
+            position: absolute;
+            top: 20%;
+            left: 17%;
+          
+        }
+        .first-container h2 {
+            position: absolute;
+            top: 28%;
+            left: 22.3%;
+
+        }
+        .calendar-event {
+            background-color: rgb(91, 170, 196);
+            height: 600px;
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            position: relative;
+        }
+        .calendar-item img {
+            width: 100%;
+            object-fit: cover;
+            height: 300px;
+        }
+        .calendar-item {
+            width: 280px;
+            transition: 0.40s ease;
+            height: 400px;
+            background-color: white;
+            margin-top: 90px;
+            transition: 0.30s;
+            
+        }
+        .calendar-item:hover {
+            flex-grow: 2;
+          
+        }
+        .calendar-item button {
+            padding: 8px;
+            color: white;
+            width: 100%;
+            margin-top: 20px;
+            background-color: black;
+            font-size: 17px;
+        }
+        .calendar-item h4 {
+            text-align: center;
+            font-size: 20px;
+            margin-top: 6px;
+        }
+        .calendar-item h3 {
+            font-size: 17px;
+            transform: rotate(9deg);
+            position: absolute;
+            top: 14%;
+            padding: 8px;
+            background-color: aliceblue;
+            transition: transform 0.20s;
+        }
+        .calendar-item button:hover {
+            opacity: 0.8;
+        }
+        .calendar-item h3:hover {
+            transform: rotate(0);
+        }
+    </style>
+</head>
+<body>
+    <div class="bg1">
+        <div class="first-container">
+        <i class="ph ph-list" style="font-size: 40px; position: absolute; right: 5%; top: 2.5%;"></i>
+        <i class="ph ph-music-notes" style="font-size: 40px; position: absolute; right: 1%;  top: 2.5%; " ></i>
+         <a href="Wonderfulindo1.html" target="_blank">Discover More</a>
+         <h1 align="center">Find your favorite place</h1>
+        <h2 align="center">Ready to find out?</h2>
+        </div>
+        <h3 style="position: absolute; top: 58%; right: 3%; writing-mode: vertical-rl; font-weight: bold; font-size: 25px;">Scroll Down</h2>
+        <i class="ph ph-arrow-fat-lines-down"></i>
+        <section class="icon-awal">
+        <h3>Follow Us</h3>
+        <i class="ph ph-instagram-logo"></i>
+        <i class="ph ph-x-logo"></i>
+        <i class="ph ph-facebook-logo"></i>
+        <i class="ph ph-youtube-logo"></i>
+        </section>
+           </div> 
+        <section id="calendar-event">
+        <h3 style="position: absolute; top: 120%; left: 35%; font-size: 35px; z-index: 101;">Our Calendar Event</h3>
+        <div class="calendar-event">
+        <div class="calendar-item">
+         <img src="./Aset-img/Bromo.jpg" alt="">
+         <h4>Bromo Mountain</h4>
+        <h3>12-13 June</h3>
+        <button>learn more</button>
+        </div>
+        <div class="calendar-item">
+        <img src="./Aset-img/Rajaampat.jpeg" alt="">
+        <h4>Raja Ampat</h4>
+        <h3>18-20 June</h3>
+        <button>learn more</button>
+        </div>
+        <div class="calendar-item">
+         <img src="./Aset-img/pantai-malawai.jpeg" alt="">
+         <h4>Pantai Malawai</h4>
+        <h3>25-27 June</h3>
+        <button>learn more</button>
+        </div>
+        <div class="calendar-item">
+         <img src="./Aset-img/destinasi6.jpeg" alt="">
+         <h4>Borobudur</h4>
+        <h3>29-30 June</h3>
+        <button>learn more</button>
+        </div>
+        </div>
+    </section> 
+</body>
+</html>

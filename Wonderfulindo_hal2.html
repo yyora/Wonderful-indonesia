@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <title>Wonderful Indonesia</title>
+    <style>
+         * {
+            box-sizing: border-box;
+            margin: 0;
+           
+        }
+        body {
+            font-family: 'rubik', Helvetica, sans-serif;
+            overflow-x: hidden;
+        }
+        .banner1 {
+            width: 100%;
+            margin: 0;
+        }
+        nav img {
+            width: 210px;
+            height: 110px;
+            position: absolute;
+            top: 3%;
+            padding-left: 20px;
+        }
+        nav ul {
+            display: flex;
+            font-size: 23px;
+            gap: 7rem;
+            position: absolute;
+            font-weight: 400;
+            font-size: 25px;
+            top: 8%;
+            right: 4%;
+        }
+        nav a {
+            color: black;
+            text-decoration: none;
+            transition: transform 0.45s;
+            
+        }
+        nav a:hover {
+            text-decoration: underline;
+            transform: translateY(-7px);
+        }
+        nav ul li {
+            list-style-type: none;
+            
+        }
+        .ph-list {
+            position: absolute; 
+            font-size: 50px; 
+            display: flex; 
+            right: 7%;
+        }
+        .ph-calendar-blank {
+            position: absolute;
+            font-size: 55px;
+            top: 150px;
+            left: 20px;
+            transition-timing-function: ease-out;
+            color: black;
+        }
+        .ph-calendar-blank:hover {
+            transform: scale(1.1);
+        }
+        .middle-container {
+            text-align: center; 
+            font-size: 28px; 
+            position: absolute; 
+            top: 50%; 
+            left: 25%;
+            transition: transform 0.25s;
+        }
+        .middle-container:hover {
+            transform: translateY(-20px);
+        }
+        .search-bar {
+            background-color:rgb(124, 124, 129) ;
+            width: 340px;
+            height: 50px;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: absolute;
+            bottom: 15%;
+            right: 5%;
+            font-size: 25px;
+            padding: 2px 25px;
+        }
+        .search-bar input {
+            width: 250px;
+            font-size: 15px;
+            border: none;
+            outline: none;
+            background: none;
+            color: white;
+        }
+        .search-bar ::placeholder {
+            color: black;
+        }
+        .ph-magnifying-glass:hover {
+            cursor: pointer;
+            font-weight: bold;
+
+        }
+        .banner-container {
+            position: absolute;
+            bottom: 5%;
+            left: 7%;
+            padding-top: 35px;
+            padding-left: 20px;
+            padding-right: 450px;
+            border-radius: 20px;
+            background-color: white;
+            font-size: 19px;
+            z-index: 3;
+        }
+        .banner-container h3 {
+            align-content: center;
+            bottom: 10%;
+        }
+        .ph-plus-square {
+            font-size: 30px;
+        }
+        .ph-plus-square:hover {
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .padding-bawah {
+            padding-top: 40px;
+            padding-left: 100%;
+            height: 55px;
+            background-color: rgb(124, 124, 129);
+            top: 91%;
+            left: 0;
+            z-index: 2;
+            position: absolute;
+        }
+        .bg3 {
+            position: relative;
+            background-color: rgb(80, 80, 141);
+            width: 100%;
+            height: 660px;  
+            opacity: 80%;
+        }
+        .bg3 .ph-list{
+            font-size: 40px;
+            position: absolute;
+            top: 10%;
+            right: 10%;
+        }
+        .destination-search {
+            position: absolute;
+            height: 35px;
+            display: flex;
+            cursor: pointer;
+            padding-top: 10px;
+            padding-left: 15px;
+            background: white;
+            align-items: center;
+            border-radius: 8px;
+            top: 10%;
+            left: 12%;
+            z-index: 5;
+        }
+        .destination-search input {
+            width: 900px;
+            font-size: 16px;
+            outline: none;
+            border: none;
+            font-weight: 200;
+            background: none;
+        }
+         .destination-container {
+            justify-content: center;
+            gap: 1rem;
+            padding: 15px 70px;
+        }
+        .destination-container .destination-card {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(19.7rem, 1fr));
+            gap: 2rem;
+        }
+        
+        .destination-card .item {
+            width: 370px;
+            height: 245px;
+            background-color: #f4f4f4;
+            border-radius: 15px;
+            box-shadow: 0px 2px 4px rgba(0,0,0,0.3);
+            text-align: center;
+            position: relative;
+            top: 45%;
+            left: 1.5%;
+        }
+        .destination-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            transition: transform 0.30s;
+           
+        }
+        .destination-card img:hover {
+            transform: scale(1.05);
+        }
+        .destination-card h3 {
+            margin: 10px;
+            text-align: center;
+            font-size: 20px;
+        }
+        .destination-card p {
+            text-align: center;
+            margin: 10px;
+            font-weight: 450;
+        }
+        .testimony {
+            background-color: rgb(89, 71, 105);
+            width: 100%;
+            padding-top: 30px;
+            height: 410px;
+            position: relative;
+            overflow-x: scroll;
+            overflow-y: hidden;
+        }
+        .testi-container {
+            padding: 15px;
+            background-color: white;
+            border-radius: 14.5px;
+            margin: 70px -130px 10px 10px;
+            width: 370px;
+            height: 260px;
+            cursor: pointer;
+            box-shadow: 0 4px 20px 2px rgba(0, 0, 0, 0.5);
+            transition: transform 0.30s ease-in;
+        }
+        .testi-container p {
+            filter: blur(100%);
+        }
+        .testi-container p:hover {
+            filter: opacity(100%);
+        }
+        .testi-container:hover {
+            transform: translateX(30px) rotate(5deg);
+        }
+        .testi-luar {
+            display: flex;
+        }
+        .testimony h2 {
+            position: absolute;
+            top: 6%;
+            left: 28%;
+            color: #f4f4f4;
+            font-weight: 600;
+            font-size: 40px;
+            transition: transform 0.20s ease-in;
+        }
+        .testimony h2:hover {
+            transform: translateY(-10px);
+        }
+        .testi-container p {
+            text-align: center;
+            font-size: 19px;
+        }
+        .testi-container h3 {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 21px;
+            text-decoration: underline;
+        }
+        .testi-container:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 0;
+            bottom: -10px;
+            left: 50%;
+            border-top : 10px solid white;
+            border-right : 10px solid transparent;
+            border-left: 10px solid transparent;
+        }
+        .ph-caret-double-left {
+            font-size: 42px;
+            position: absolute;
+            top: 43%;
+            left: 5%;
+            color: white;
+        }
+        .ph-caret-double-right {
+            font-size: 42px;
+            position: absolute;
+            top: 43%;
+            right: 5%;
+            color: white;
+        }
+        #travel-guide h1 {
+            position: absolute;
+            top: 290%;
+            right: 0;
+            font-size: 65px;
+            font-weight: 650;
+        }
+        #travel-guide h1::first-letter {
+            color: rgb(85, 85, 226);
+            font-size: 85px;
+            transition: transform 0.20s;
+        }
+        #travel-guide h2 {
+            position: absolute;
+            top: 290%;
+            left: 0;
+            font-size: 65px;
+            font-weight: 650;
+        }
+        .travel-card {
+            display: flex;
+            margin: 15px;
+            justify-content: center;
+        }
+        .travel-item {
+            width: 300px;
+            height: 380px;
+            text-align: center;
+            position: relative;
+            margin: 10px;
+        }
+        .travel-item img {
+            width: 100%;
+            height: 380px;
+            object-fit: cover;
+            z-index: 1;
+            opacity: 0.8;
+            cursor: pointer;
+        }
+        figcaption {
+            transition: transform 0.45s;
+            transform: translate3d(0, -50%, 0);
+        }
+        figcaption:hover {
+           transform: translateY(-25px);
+        }
+        figcaption h4 {
+            z-index: 2;
+            position: absolute;
+            bottom: 140px;
+            font-weight: bold;
+            font-size: 22px;
+            left: 0;
+            text-decoration: none;
+            width: 100%;
+            margin: 0;
+            cursor: pointer;
+            background-color: white;
+        }
+        figcaption p {
+            z-index: 99;
+            bottom: 0;
+            position: absolute;
+            padding: 2em 5px;
+            width: 100%;
+            opacity: 0;
+            transition: transform 0.35s;
+            color: #f4f4f4;
+          
+        }
+        figcaption p:hover {
+            opacity: 1;
+            padding-top: 43px ;
+            background-color: rgba(0,0,0,0.3);
+            z-index: -10;
+        }
+        footer {
+            padding: 20px;
+            background-color: rgb(124, 124, 129);
+        }
+        .footer-container {
+            display: inline-flex;
+            justify-content: space-evenly;
+            margin: 0 auto;
+        }
+        .footer1 {
+            flex: 1;
+            padding: 10px;
+            font-size: 17px;
+        }
+        footer i {
+            font-size: 35px;
+            margin-right: 10px;
+            transition: font-size 0.30s;
+        }
+        footer i:hover {
+            font-size: 30px;
+        }
+        .footer1 h4 {
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+        footer img {
+            justify-content: right;
+            width: 250px;
+            height: 110px;
+            position: absolute;
+            right: 2%;
+        }
+  
+    </style>
+</head>
+<body> 
+    <div class="bg2" id="about_us"> <div class="banner1"></div>
+            <img src="Aset-img/homebanner1.png" alt="banner1" width="100%" height="590px">
+            </div>
+            <nav>
+                <img src="Aset-img/logoindo-removebg-preview.png" alt="Logo Wonderful Indonesia" width="250px" height="90px" style="margin-left: 25px;">
+                    <ul>
+                        <li><a href="#about_us">About Us</a></li>
+                        <li><a href="#destination">Destination</a></li>
+                        <li><a href="#testimony">Testimony</a></li>
+                        <li><a href="#travel-guide">Guide</a></li>
+                    </ul>
+                </nav>
+                <div class="slider">
+            <a href="Wonderfulindo.html"><i class="ph ph-calendar-blank"></i></a>
+           <h3 style="position: absolute; top: 170px; left: 80px; font-size: 20px;">Calendar Event</h3>
+        <i class="ph ph-caret-left" style="font-size: 50px; position: absolute; top: 55%; left: 3.5%;"></i>
+        <i class="ph ph-caret-right" style="font-size: 50px; position: absolute; top: 55%; right: 3.5%;"></i>
+        <div class="middle-container">
+        <h2>Welcome to Wonderful Indonesia</h2>
+        </div>
+        <div class="banner-container">
+        <h3 style="padding-left: 0; align-content: center; justify-content: center; margin-bottom: 10px; margin-top: 0;" >
+            Find tips and travel guide from us if you new in Indonesia</h3>
+        <div class="search-bar">
+        <i class="ph ph-magnifying-glass"></i>
+        <input type="text" placeholder="Search any Information or place">
+        <i class="ph ph-plus-square"></i>
+        </div>
+    </div> 
+    </div>
+  <div class="padding-bawah"></div>
+</div>
+</section>
+<section>
+    <div class="bg3" id="destination">
+    <i class="ph ph-list"></i>
+    <div class="destination-search" style="font-size: 20px;">
+    <i class="ph ph-magnifying-glass"></i>
+    <input type="text" placeholder="Search Destination">
+    </div> 
+    <div class="destination-container">
+    <div class="destination-card">
+        <div class="item">
+            <img src="Aset-img/destinasi1.jpg" alt="Pura Bali">
+            <h3>Bali's Pura</h3>
+            <p>a place of worship for Hindus and a center of spiritual and cultural activities. </p>
+        </div>
+        <div class="item">
+            <img src="Aset-img/destinasi2.png" alt="Gedung Sate">
+            <h3>Sate Building</h3> 
+            <p>is the office building of the Governor of West Java.</p>
+        </div>
+        
+        <div class="item">
+            <img src="Aset-img/destinasi3.jpeg" alt="Pulau Komodo">
+            <h3>Komodo Island</h3>
+            <p>Komodo island's particularly notable as the habitat of the Komodo dragon</p>
+        </div>
+        <div class="item">
+            <img src="Aset-img/destinasi4.jpg" alt="Jaya Wijaya">
+            <h3>Jayawijaya Mountain</h3>
+            <p>Jayawijaya is Mountain range. Its highest point is Puncak Mandala at 4,760 metres.</p>
+        </div>
+        <div class="item"> 
+            <img src="Aset-img/destinasi5.jpeg" alt="Taman Nasional Baluran">
+            <h3>Baluran National Park</h3>
+            <p>A place that stores Indonesia's biodiversity, 
+                including endemic and wild mammals. </p>
+        </div>
+        <div class="item">
+            <img src="Aset-img/destinasi6.jpeg" alt="Borobudur"  width="300px" height="200px">
+            <h3>Borobudur</h3>
+            <p>A magnificent 9th-century Mahayana Buddhist temple located in central java.</p>
+        </div>
+    </div>
+</div>
+</div>
+</section>
+ <div class="testimony" id="testimony"> 
+     <h2>What they said about Indonesia?</h2>
+    <div class="testi-luar">
+     <div class="testi-container">
+        <p>"Indonesia is such a great place, especially Bali and Bandung. Foods not just amazing but also cheap,
+             100% recommend. Anyway you have to try bakso and mie ayam in Bandung!"</p>
+            <h3>@Janeloves_travel</h3>
+    </div>
+    <div class="testi-container">
+        <p>"Golf in Indonesia has something else to offer: ways to make you forget the last four hours and take away the aches. 
+            Nearly every course has a spa."</p>
+            <h3>Raymond Bonner</h3>
+    </div>
+    <div class="testi-container">
+        <p>"As an Indian, you feel easily connected with certain histories in places like Indonesia, 
+            where one sees, because of the presence of the Hindu-Buddhist in Indonesia."</p>
+            <h3>Pankaj Mishra</h3>
+    </div>
+    <div class="testi-container">
+        <p>"Lost in the enchantment of Indonesia, where dreams become reality. 
+            The island is so peaceful and the smiles are constant."</p>
+           <h3> Carolyn Murph</h3>
+    </div>
+    <div class="testi-container">
+        <p>"One volcano in Hawaii, one volcano in Indonesia, produces enough gases in the atmosphere, 
+            which include those natural elements that are in the Earth’s crust, that kind of make all the,
+             you know, the science that we have about what we produce."</p>
+            <p>Jim Gibbons</p>
+    </div>
+</div>
+    <i class="ph ph-caret-double-left"></i>
+    <i class="ph ph-caret-double-right"></i>
+ </div>
+ <section id="travel-guide">
+    <h2>Trave<i>l</i></h2>
+    <h1>Guide</h1>
+    <div class="travel-card">
+    <div class="travel-item">
+        <img src="Aset-img/guide1.webp" alt="Visa">
+    <figcaption>
+    <h4>Passport and Visa</h4>
+    <p>Do you know the most important thing? Of course, passport. 
+        You should always update your passport, unless you want to be stuck at the airport. </p>
+    </figcaption>
+    </div>
+    <div class="travel-item">
+        <img src="Aset-img/guide2.jpg" alt="Make List">
+    <figcaption>
+    <h4>Make List</h4>
+    <p>Make sure you make list or have destination to go to, but if you’re backpacker traveler, 
+        that would be okay. Good luck with your travel. I hope so.</p>
+    </figcaption>
+    </div>
+    <div class="travel-item">
+        <img src="Aset-img/guide3.jpg" alt="Hotel">
+    <figcaption>
+    <h4>Hotel</h4>
+    <p>Find a comfortable hotel bro, not just an expensive or cheap hotel. 
+        That's it, if u find the cheap and comfortable one, congrats, you got a bless from god.</p>
+ </figcaption>
+</div>
+</div>
+</div>
+</section>
+<footer>
+    <div class="footer-container">
+    <div class="footer1">
+    <h4>Our Social Media</h4>
+    <i class="ph ph-instagram-logo"></i>
+    <i class="ph ph-x-logo"></i>
+    <i class="ph ph-facebook-logo"></i>
+    <i class="ph ph-youtube-logo"></i>
+    </div>
+    <div class="footer1">
+    <h4>Contact Us</h4>
+    <p>wonderfulin@gmail.com</p> 
+    <i class="ph ph-map-pin-line" style="position: absolute; left: 21.5%;"></i> 
+    <p>Jalan Buluran Atas, Talang Jawa, Tanjung Enim</p>
+    </div>  
+</div> 
+<img src="Aset-img/logoindo-removebg-preview.png" alt="">
+</footer>
+    <script>
+        
+    </script>
+</body>
+</html>
